@@ -60,10 +60,20 @@ class Mica(object):
                 if ftm1 > 19:
                     print("%s is bored" % mica.name)
                     mica.cmds.body.do_turn(-90, 200)
+                    
             elif ftm == 2:
                 print("%s is exploring his surroundings" % mica.name)
                 mica.cmds.body.do_forward(30, 10)
-                    
+                mica.cmds.body.do_turn(90, 200)
+        
+            elif ftm == 3:
+                print("%s is dizzy" % mica.name)
+                mica.cmds.body.do_turn(360, 200)
+                
+            elif ftm == 4:
+                print("%s wants to play with you" % mica.name)
+                                
+                
            
            
         print("That's all for now.")
