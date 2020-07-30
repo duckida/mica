@@ -3,6 +3,8 @@ Dash and Dot, on Mac, with AI!
 
 **Mica is currently in a "public alpha" state.**
 
+To use Mica, you must have macOS and a Dash robot.
+
 ### Step 1: Install [WonderPy](https://github.com/playi/WonderPy)
 Follow the [WonderPy installation instructions](https://github.com/playi/WonderPy#setup).
 
