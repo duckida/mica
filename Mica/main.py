@@ -45,8 +45,8 @@ class Mica(object):
                     
                 elif strCmd == "Left":
                     mica.cmds.body.do_turn(90, 200)
-        elif strMode = "Free Time":
-
+        elif strMode == "Free Time":
+          while True:
             #The variable used for AI
             
             ftm = random.randint(0, 20)
@@ -58,8 +58,11 @@ class Mica(object):
 
             if ftm == 1:
                 if ftm1 > 19:
-                    print("%s is bored." % mica.name)
+                    print("%s is bored" % mica.name)
                     mica.cmds.body.do_turn(-90, 200)
+            elif ftm == 2:
+                print("%s is exploring his surroundings" % mica.name)
+                mica.cmds.body.do_forward(30, 10)
                     
            
            
