@@ -2,6 +2,7 @@
 Dash and Dot, on Mac, with AI!
 
 **Mica is currently in a "public alpha" state.**
+I will be updating Mica every few minutes between 2pm to 4pm
 
 To use Mica, you must have macOS and a Dash robot.
 
