@@ -19,11 +19,13 @@ class Mica(object):
         print("Connected to a Mica named %s." % (mica.name))
         Thread(target=self.micaThread, args=(mica,)).start()
 
+
     def micaThread(self, mica):
         # mica is the robot we've connected to.
 
         
         print("Welcome to Mica 1.0(alpha)\n\n")
+        robot.cmds.media.do_audio(WWMedia.WWSound.WWSoundDash.LETS_GO)
         mica.cmds.RGB.stage_all(1, 1, 0)
         mode = raw_input("Mode(Free Time, Control): ")
         strMode = str(mode)
@@ -46,7 +48,9 @@ class Mica(object):
                     mica.cmds.body.do_turn(90, 200)
                 elif strCmd == "Exit":
                     break
-        elif strMode == "Free Time": 
+        elif strMode == "Free Time":
+
+            time.sleep(1)
 
           print("%s is so happy that he gets free time!" % mica.name)
           while True:
@@ -59,7 +63,7 @@ class Mica(object):
             ftm4 = random.randint(0, 20)
 
             if ftm == 1:
-                if ftm1 > 19:
+                if ftm1 > 10:
                     print("%s is bored" % mica.name)
                     mica.cmds.body.do_turn(-90, 200)
                     
@@ -131,15 +135,35 @@ class Mica(object):
                 time.sleep(0.5)
             elif ftm == 7:
                 print("%s is hungry" % mica.name)
-                rawFood = raw_input("Would you like to feed %s?" % mica.name)
+                rawFood = raw_input("Would you like to feed %s? " % mica.name)
                 foodD = str(rawFood)
                 if foodD == "Yes":
                     foodList = ["Nuts and Bolts", "Cereal", "Mango", "Pasta", "Ice Cream", "Popsicle", "Honeydew", "Almonds"]
                     ciList = random.randint(1,8)
-                    print("Feeding Mica %s" % foodList[ciList])
+                    print("Feeding %s %s" % (mica.name, foodList[ciList]))
                     print(".")
                     print("..")
-            
+                    print("...")
+                    time.sleep(0.5)
+                else:
+                    print("%s is not happy that you did not feed him" % mica.name)
+            elif ftm == 8:
+                print("%s is looking around" % mica.name)
+                mica.cmds.head.stage_pan_angle(120)
+                time.sleep(0.5)
+                robot.cmds.head.stage_pan_angle(0)
+                robot.cmds.body.do_forward(20, 10)
+                mica.cmds.head.stage_pan_angle(-120)
+                time.sleep(0.5)
+                robot.cmds.head.stage_pan_angle(0)
+            elif ftm == 9:
+                print("%s is going to sleep" % mica.name)
+                time.sleep(60)
+                print("%s is awake" % mica.name)
+            elif ftm == 10:
+                print("")
+
+
                 
                 
                 
